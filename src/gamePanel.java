@@ -4,15 +4,16 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
 public class gamePanel extends JPanel implements ActionListener, KeyListener{  
 	Timer timer;
+	GameObject gameObject;
 	
 	public gamePanel(){
 		timer = new Timer(1000/60, this);
+		gameObject = new GameObject(50, 50, 20, 20);
 	}
 	
 	void startGame() {
@@ -22,13 +23,14 @@ public class gamePanel extends JPanel implements ActionListener, KeyListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
+		gameObject.update();
 		repaint();
 	}
 	
 	@Override
 
 	public void paintComponent(Graphics g){
-		g.fillRect(10, 10, 100, 100);         
+		gameObject.draw(g);
 	}
 
 	@Override
