@@ -99,12 +99,27 @@ public class gamePanel extends JPanel implements ActionListener, KeyListener{
 
 	@Override
 	public void keyPressed(KeyEvent e) {
-		System.out.println("your toes, hand 'em over");
+		//System.out.println("your toes, hand 'em over");
 		if(e.getKeyCode() == KeyEvent.VK_ENTER) {
 			currentState++;
 			if(currentState > END_STATE){
                 currentState = MENU_STATE;
         }
+		}
+		if(e.getKeyCode() == KeyEvent.VK_RIGHT) {
+			ship._x -= ship.speed;
+		}
+		
+		if(e.getKeyCode() == KeyEvent.VK_LEFT) {
+			ship._x = ship.speed;
+		}
+		
+		if(e.getKeyCode() == KeyEvent.VK_UP) {
+			ship._y += ship.speed;
+		}
+		
+		if(e.getKeyCode() == KeyEvent.VK_DOWN) {
+			ship._y -= ship.speed;
 		}
 		
 	}
@@ -112,12 +127,12 @@ public class gamePanel extends JPanel implements ActionListener, KeyListener{
 	@Override
 	public void keyReleased(KeyEvent e) {
 		// TODO Auto-generated method stub
-		System.out.println("jesus is coooool, jesus is gooooood");
+		//System.out.println("jesus is coooool, jesus is gooooood");
 	}
 
 	@Override
 	public void keyTyped(KeyEvent e) {
 		// TODO Auto-generated method stub
-		System.out.println("gimmie some cheese");
+		//System.out.println("gimmie some cheese");
 	}	
 }
