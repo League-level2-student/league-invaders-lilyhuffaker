@@ -106,20 +106,32 @@ public class gamePanel extends JPanel implements ActionListener, KeyListener{
                 currentState = MENU_STATE;
         }
 		}
-		if(e.getKeyCode() == KeyEvent.VK_RIGHT) {
-			ship._x -= ship.speed;
+		if(e.getKeyCode() == KeyEvent.VK_LEFT) {
+			ship._x += ship.speed;
+			if(ship._x > LeagueInvaders.width) {
+				ship._x = 0;
+			}
 		}
 		
-		if(e.getKeyCode() == KeyEvent.VK_LEFT) {
-			ship._x = ship.speed;
+		if(e.getKeyCode() == KeyEvent.VK_RIGHT) {
+			ship._x -= ship.speed;
+			if(ship._x < 0) {
+				ship._x = LeagueInvaders.width;
+			}
 		}
 		
 		if(e.getKeyCode() == KeyEvent.VK_UP) {
 			ship._y += ship.speed;
+			if(ship._y > LeagueInvaders.height) {
+				ship._y = 0;
+			}
 		}
 		
 		if(e.getKeyCode() == KeyEvent.VK_DOWN) {
 			ship._y -= ship.speed;
+			if(ship._y < 0) {
+				ship._y = LeagueInvaders.height;
+			}
 		}
 		
 	}
