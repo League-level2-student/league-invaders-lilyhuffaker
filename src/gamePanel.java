@@ -34,6 +34,7 @@ public class gamePanel extends JPanel implements ActionListener, KeyListener{
 	
 	void updateGameState() {
 		man.update();
+		man.manageEnemies();
 	}
 	
 	void updateEndState() {
@@ -143,7 +144,7 @@ public class gamePanel extends JPanel implements ActionListener, KeyListener{
 		// TODO Auto-generated method stub
 		//System.out.println("jesus is coooool, jesus is gooooood");
 		if(e.getKeyCode() == KeyEvent.VK_SPACE) {
-			man.addProjectile(new Projectile(ship._x, ship._y,10,10));
+			man.addProjectile(new Projectile(ship._x+ship._width/2-5, ship._y,10,10));
 		}
 	}
 
