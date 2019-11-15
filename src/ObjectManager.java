@@ -38,6 +38,15 @@ public class ObjectManager {
 		}
 	}
 	
+	public void checkCollision() {
+		for(Alien a : aliens){
+        if(_rocket.collisionBox.intersects(a.collisionBox)) {
+                _rocket.isAlive = false;
+        }
+        
+}
+	}
+	
 	public void manageEnemies(){
         if(System.currentTimeMillis() - enemyTimer >= enemySpawnTime){
                 addAlien(new Alien(new Random().nextInt(LeagueInvaders.width), 0, 50, 50));
