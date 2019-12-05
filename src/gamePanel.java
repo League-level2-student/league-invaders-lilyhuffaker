@@ -81,7 +81,7 @@ public class gamePanel extends JPanel implements ActionListener, KeyListener {
 
 	void drawGameState(Graphics g) {
 		g.setColor(Color.BLACK);
-		g.fillRect(0, 0, LeagueInvaders.width, LeagueInvaders.height);
+		g.drawImage(gamePanel.spaceImg, 0, 0, LeagueInvaders.width, LeagueInvaders.height, null);
 		man.draw(g);
 	}
 
@@ -89,7 +89,7 @@ public class gamePanel extends JPanel implements ActionListener, KeyListener {
 		g.setColor(Color.RED);
 		g.fillRect(0, 0, LeagueInvaders.width, LeagueInvaders.height);
 		g.setFont(largerFont);
-		g.setColor(Color.MAGENTA);
+		g.setColor(Color.BLACK);
 		g.drawString("Game over man, Game over", 30, 100);
 		g.drawString("You did murder of dis many: " + man.getScore(), 10, 300);
 		g.drawString("Press the enter to murder more", 10, 500);
